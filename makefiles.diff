@@ -1,0 +1,42 @@
+	test -d venv || virtualenv venv					test -d venv || virtualenv venv
+	@docker build -f dpc-web/Dockerfile . -t dpc-web      |		@podman build -f dpc-web/Dockerfile . -t dpc-web
+	@docker build -f dpc-admin/Dockerfile . -t dpc-web-ad |		@podman build -f dpc-admin/Dockerfile . -t dpc-web-ad
+	@docker build -f dpc-impl/Dockerfile . -t dpc-impl    |		@podman build -f dpc-impl/Dockerfile . -t dpc-impl
+	@docker build -f dpc-adminv2/Dockerfile . -t dpc-admi |		@podman build -f dpc-adminv2/Dockerfile . -t dpc-admi
+	@docker-compose up start_core_dependencies	      |		@podman-compose up start_core_dependencies
+	@USE_BFD_MOCK=false docker-compose up start_api_depen |		@USE_BFD_MOCK=false podman-compose up start_api_depen
+	@docker-compose up start_api			      |		@podman-compose up start_api
+	@docker-compose -f docker-compose.yml -f docker-compo |		@podman-compose -f docker-compose.yml -f docker-compo
+	@docker-compose -f docker-compose.yml -f docker-compo |		@podman-compose -f docker-compose.yml -f docker-compo
+	@docker-compose -p dpc-v2 -f docker-compose.yml -f do |		@podman-compose -p dpc-v2 -f docker-compose.yml -f do
+	@docker-compose -p dpc-v2 -f docker-compose.yml -f do |		@podman-compose -p dpc-v2 -f docker-compose.yml -f do
+	@docker-compose -p dpc-v2 -f docker-compose.yml -f do |		@podman-compose -p dpc-v2 -f docker-compose.yml -f do
+	@docker-compose -p dpc-v2 -f docker-compose.yml -f do |		@podman-compose -p dpc-v2 -f docker-compose.yml -f do
+	@docker-compose -p dpc-v2 -f docker-compose.yml -f do |		@podman-compose -p dpc-v2 -f docker-compose.yml -f do
+	@docker ps					      |		@podman ps
+	@docker-compose -p dpc-v2 -f docker-compose.yml -f do |		@podman-compose -p dpc-v2 -f docker-compose.yml -f do
+	@docker-compose -f docker-compose.yml -f docker-compo |		@podman-compose -f docker-compose.yml -f docker-compo
+	@USE_BFD_MOCK=false docker-compose -f docker-compose. |		@USE_BFD_MOCK=false podman-compose -f docker-compose.
+	@docker-compose -f docker-compose.yml -f docker-compo |		@podman-compose -f docker-compose.yml -f docker-compo
+	@docker-compose -f docker-compose.yml -f docker-compo |		@podman-compose -f docker-compose.yml -f docker-compo
+	@docker-compose -f docker-compose.yml -f docker-compo |		@podman-compose -f docker-compose.yml -f docker-compo
+	@docker-compose -f docker-compose.yml -f docker-compo |		@podman-compose -f docker-compose.yml -f docker-compo
+	@docker ps					      |		@podman ps
+	@docker-compose -f docker-compose.yml -f docker-compo |		@podman-compose -f docker-compose.yml -f docker-compo
+	@docker ps					      |		@podman ps
+	@docker-compose -p dpc-v2 -f docker-compose.yml -f dp |		@podman-compose -p dpc-v2 -f docker-compose.yml -f dp
+	@docker-compose -p dpc-v2 -f dpc-go/dpc-api/docker-co |		@podman-compose -p dpc-v2 -f dpc-go/dpc-api/docker-co
+	@docker-compose -p dpc-v2 -f docker-compose.yml -f do |		@podman-compose -p dpc-v2 -f docker-compose.yml -f do
+	@docker-compose -p dpc-v2 -f docker-compose.yml -f dp |		@podman-compose -p dpc-v2 -f docker-compose.yml -f dp
+	@docker-compose -p dpc-v2 -f docker-compose.yml -f do |		@podman-compose -p dpc-v2 -f docker-compose.yml -f do
+	@docker-compose -p dpc-v2 -f docker-compose.yml -f do |		@podman-compose -p dpc-v2 -f docker-compose.yml -f do
+	@docker-compose -p dpc-v2 -f docker-compose.yml -f do |		@podman-compose -p dpc-v2 -f docker-compose.yml -f do
+	@docker-compose -p dpc-v2 -f dpc-go/dpc-api/docker-co |		@podman-compose -p dpc-v2 -f dpc-go/dpc-api/docker-co
+	@docker ps					      |		@podman ps
+	@docker-compose -p dpc-v2 -f docker-compose.yml -f dp |		@podman-compose -p dpc-v2 -f docker-compose.yml -f dp
+	@docker-compose -p dpc-v2 -f dpc-go/dpc-api/docker-co |		@podman-compose -p dpc-v2 -f dpc-go/dpc-api/docker-co
+	@docker ps					      |		@podman ps
+	@docker-compose -p dpc-v2 -f docker-compose.yml -f do |		@podman-compose -p dpc-v2 -f docker-compose.yml -f do
+	@docker-compose -p dpc-v2 -f docker-compose.yml -f do |		@podman-compose -p dpc-v2 -f docker-compose.yml -f do
+ci-app: docker-base secure-envs				      |	ci-app: podman secure-envs
+	@docker-compose -f ./docker-compose.base.yml build ba |		@podman-compose -f ./docker-compose.base.yml build ba
